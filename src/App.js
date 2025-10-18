@@ -14,7 +14,7 @@ function App() {
   const handleGet = async()=>{
     try{
       console.log("tapped");
-      const resp = await axios.get("https://bms-be-mf8b.onrender.com//books");
+      const resp = await axios.get("https://bms-be-mf8b.onrender.com/books");
       console.log(resp.data);
       setData(resp.data);
       setMsg(resp.data.msg);
@@ -26,7 +26,7 @@ function App() {
   
   const handlePost = async()=>{
     try{
-      const resp = await axios.post("https://bms-be-mf8b.onrender.com//books",book);
+      const resp = await axios.post("https://bms-be-mf8b.onrender.com/books",book);
       setMsg(resp.data.msg);
     }catch(e){
       console.log(e);
@@ -35,7 +35,7 @@ function App() {
   
   const handleDelete = async()=>{
     try{
-      const resp = await axios.delete(`https://bms-be-mf8b.onrender.com//books/${book.id}`);
+      const resp = await axios.delete(`https://bms-be-mf8b.onrender.com/books/${book.id}`);
       setMsg(resp.data.msg);
     }catch(e){
       console.log(e);
@@ -45,7 +45,7 @@ function App() {
  const handlePut = async()=>{
     try{
 
-      const resp = await axios.put(`https://bms-be-mf8b.onrender.com//books/${book.id}`,{name:book.name});
+      const resp = await axios.put(`https://bms-be-mf8b.onrender.com/books/${book.id}`,{name:book.name});
       setMsg(resp.data.msg);
     }catch(e){
       console.log(e);
